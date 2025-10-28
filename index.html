@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT CLUB</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/HARRY.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container main-container">
+    <div class="page-header">
+      <h2>
+        <img src="img/HARRY.png" style="width:200px; height:200px; margin-right:8px; vertical-align:middle;">
+        ระบบค้นหาชมรมแผนกไอที
+      </h2>
+    </div>
+</div>
+
+
+    <div class="filters-section">
+      <div class="filter-group">
+        <div class="filter-item">
+          <label for="filter-group">แผนก:</label>
+          <select id="filter-group" class="form-select">
+            <option value="all">ทั้งหมด</option>
+            <option value="ทค">ทค</option>
+            <option value="คภ">คภ</option>
+            <option value="สท">สท</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-year">ปี:</label>
+          <select id="filter-year" class="form-select">
+            <option value="all">ทั้งหมด</option>
+            <option value="1">ปี 1</option>
+            <option value="2">ปี 2</option>
+            <option value="3">ปี 3</option>
+            <option value="4">ปี 4</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-room">ห้อง:</label>
+          <select id="filter-room" class="form-select">
+            <option value="all">ทั้งหมด</option>
+            <option value="ห้อง 1">ห้อง 1</option>
+            <option value="ห้อง 2">ห้อง 2</option>
+            <option value="ห้อง 3">ห้อง 3</option>
+            <option value="ห้อง 4">ห้อง 4</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-club-select">ชมรม:</label>
+          <select id="filter-club-select" class="form-select">
+            <option value="all">ทั้งหมด</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-club">ค้นหา:</label>
+          <input type="text" id="filter-club" class="form-control" placeholder="พิมพ์สิ่งที่ต้องการค้นหา...">
+        </div>
+
+        <button id="export-btn" class="btn btn-export">
+          <i class="bi bi-file-earmark-excel me-2"></i>Export Excel
+        </button>
+      </div>
+    </div>
+
+    <div class="tabs-container" id="tabs"></div>
+    
+    <div id="tab-contents">
+      <div class="loading">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">กำลังโหลด...</span>
+        </div>
+        <p class="mt-2">กำลังโหลดข้อมูล...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="site-footer">
+      <p><i class="bi bi-code-slash me-2"></i>ออกแบบและพัฒนาโดย นายชลากร สุนทรนันท์ สาขาวิชาเครือข่ายคอมพิวเตอร์และความปลอดภัย</p>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="func.js"></script>
+</body>
+</html>
