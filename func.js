@@ -138,7 +138,13 @@ function getFilteredData(sheetIndex) {
     const rowText = r.join(' ').toLowerCase();
     
     let matchGroup = groupVal === "all" || rowText.includes(groupVal.toLowerCase());
-    let matchYear = yearVal === "all" || r.some(c => String(c).trim() === yearVal);
+    
+    // แก้ไขการตรวจสอบระดับชั้น รองรับทั้งรูปแบบ "ปี 1" และ "1"
+    let matchYear = yearVal === "all" || r.some(c => {
+      const cellText = String(c).trim();
+      return cellText === yearVal || cellText === `ปี ${yearVal}`;
+    });
+    
     let matchClubSelect = clubSelectVal === "all" || r.some(c => String(c).trim() === clubSelectVal);
     let matchClub = clubVal === "" || rowText.includes(clubVal);
     let matchRoom = roomVal === "all" || r.some(c => String(c).trim() === roomVal);
